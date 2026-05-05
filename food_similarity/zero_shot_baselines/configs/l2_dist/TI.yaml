@@ -1,0 +1,34 @@
+# Ablation: text + image
+# Distance: l2, Normalization: rank (percentile within category)
+# Features: Ingredient text embeddings, DINOv3 image embeddings
+
+experiment_name: l2_dist/l2_TI
+
+model:
+  type: distance_predictor
+  distance_metric: l2
+  normalization_method: rank
+
+features:
+  # Ingredient text embeddings (Qwen3-Embedding)
+  ingredient_text:
+    enabled: true
+    weight: 1.0
+    scaler_type: standard
+    pca_dim: null
+    model_name: Qwen/Qwen3-Embedding-0.6B
+    instruction: "Instruct: Given a food ingredient list, identify products with similar taste, texture, and sensory properties\nQuery:"
+  # DINOv3 image embeddings
+  image:
+    enabled: true
+    weight: 1.0
+    scaler_type: standard
+    pca_dim: null
+    model_name: dinov3_vitl16
+
+missing_feature_strategy: skip
+random_seed: 42
+
+data:
+  data_dir: data/competition
+  labels_path: data/product_labels_manually_cleaned.csv

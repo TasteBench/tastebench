@@ -1,0 +1,20 @@
+# LLM ablation: ingredients + image
+# Model: Qwen3.5 397B A17B (reasoning)
+
+model:
+  type: llm_predictor
+  model_name: qwen/qwen3.5-397b-a17b
+  reasoning_enabled: true
+  temperature: 0.0
+  max_workers: 16
+  max_retries: 5
+  timeout_seconds: 30
+  timeout_reasoning_seconds: 300
+  prompt_features:
+  - ingredients
+  - image
+random_seed: 42
+data:
+  data_dir: data/competition
+  labels_path: data/product_labels_manually_cleaned.csv
+experiment_name: llm/qwen3_5_397b_a17b/ingredients_image

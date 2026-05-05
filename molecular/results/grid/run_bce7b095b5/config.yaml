@@ -1,0 +1,30 @@
+data:
+  label_column: Canonicalized Taste
+  label_order:
+  - sweet
+  - bitter
+  - sour
+  - umami
+  - undefined
+  smiles_column: Canonicalized SMILES
+  test_csv: molecular/data/splits/fart_test.csv
+  train_csv: molecular/data/splits/fart_train.csv
+  val_csv: molecular/data/splits/fart_val.csv
+model:
+  depth: 3
+  dropout: 0.0
+  hidden_dim: 300
+  n_classes: 5
+  type: dmpnn
+run_name: run_bce7b095b5
+seed: 42
+training:
+  batch_size: 50
+  class_weighting: sqrt_inverse_frequency
+  device: auto
+  init_lr: 0.0001
+  max_epochs: 50
+  patience: 10
+wandb:
+  mode: online
+  project: taste_gnn

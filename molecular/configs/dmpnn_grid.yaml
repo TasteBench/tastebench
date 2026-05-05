@@ -1,0 +1,23 @@
+base_config: molecular/configs/dmpnn_base.yaml
+
+# Principled grid for selecting a single best D-MPNN config.
+#
+# SMILES augmentation is intentionally NOT a lever: chemprop's D-MPNN is
+# permutation-invariant over atoms, so 10 random SMILES of the same molecule
+# parse to the same graph and yield identical forward passes.  That trick
+# only helps sequence models like FART Augmented.
+#
+# The three levers we sweep are:
+#   (1) class_weighting -- fixes the current minority-class over-prediction
+#       (umami P=.227 / R=.833 with inverse_frequency); lighter weighting is
+#       hypothesized to improve P, F1 and calibration.
+#   (2) dropout -- the base run used 0.0, so we probe whether any
+#       regularization helps generalization on this 10.5k-row train set.
+#   (3) depth -- 3 is the chemprop default; 5 gives a second receptive field
+#       to check whether long-range substructure helps.
+# Selection rule: highest val_macro_f1 on fart_val.csv, committed before
+# evaluating FART test or NECTAR LOO.
+sweep:
+  training.class_weighting: ["none", "sqrt_inverse_frequency", "inverse_frequency"]
+  model.dropout:            [0.0, 0.2]
+  model.depth:              [3, 5]

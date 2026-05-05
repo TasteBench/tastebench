@@ -1,0 +1,12 @@
+# SHA256 of input caches for NeurIPS 2026 supervised pipeline
+# Generated for repro-check; update alongside any cache regeneration.
+# Format: sha256  relative_path
+1a2fb7e7f70aada672c608dcd735674f302e250525b638d5971cd47454067998  shared/data/caches/chebi_smiles_cache.csv  # 178,866 bytes
+7814bd58edeca0f882d55adea702d41c31d5fb55236b4d4b662bae04cf9da62a  shared/data/caches/fart_classifier_dense_embeddings.pkl  # 431,547,181 bytes
+2d6f7d934de6ea052236be02833421644e000ad300cb18ddc1b59742aba0168a  shared/data/caches/fart_compound_embeddings.pkl  # 431,548,154 bytes
+e9e0b1eb3bdbea68ebe47878a125e3de9a5f0a5e39679bbe473d5fba0867b12e  shared/data/caches/fart_taste_probs_embeddings.pkl  # 15,862,725 bytes
+df9d69fd301c857b38d23c75637a005a4078d9e36153a8c9742307d5d8ac08da  shared/data/caches/sensory_descriptions.csv  # 1,204,803 bytes
+edd48aabe6cc640a273358c9029830702619383dcc54b2604942ee9f46771d40  shared/data/caches/smiles_cache.csv  # 13,132,000 bytes
+13605d7242e434b3fd12ace495db71d2d118764b303836490b207f6e9d4d0845  shared/data/caches/taste_gnn_best_compound_embeddings.pkl  # 176,902,170 bytes
+af5db453fafe973f865c9bb05957a6479ccfb30b234f1ebc4e5dc8dcc376cfce  shared/data/caches/taste_gnn_centered_compound_embeddings.pkl  # 176,902,170 bytes
+4bd7dda509d6c2920432e9eee9449d8213ea2969b19f4f5aca409f64668e1e7b  shared/data/caches/taste_gnn_regression_compound_embeddings.pkl  # 176,902,170 bytes

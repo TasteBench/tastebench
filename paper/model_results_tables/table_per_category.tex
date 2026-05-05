@@ -1,0 +1,37 @@
+\begin{center}
+\captionof{table}{Per-category pairwise accuracy (point on top, 95\% BCa CI from 10{,}000 resamples below; bootstrap restricted to within-category products) for one model per family. \textbf{Bold} = best model per category; $^\dag$ = CI overlaps the row leader (no significant difference at 95\%). $n$ = number of products in category; Pairs $= \binom{n}{2}$ within-category ranking pairs. Wide CIs on small-$n$ categories reflect the small effective sample size and are reported faithfully.}
+\label{tab:per-category}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}lrrccc@{}}
+\toprule
+Category & $n$ & Pairs & Gemini & BT & BT+Gemini \\
+\midrule
+Bacon & 10 & 45 & \shortstack{\textbf{.556} \\ {\scriptsize [.322,.789]}} & \shortstack{.511$^\dag$ \\ {\scriptsize [.222,.789]}} & \shortstack{.533$^\dag$ \\ {\scriptsize [.289,.778]}} \\
+Barista Milk & 10 & 45 & \shortstack{.767$^\dag$ \\ {\scriptsize [.633,.922]}} & \shortstack{.700$^\dag$ \\ {\scriptsize [.521,.889]}} & \shortstack{\textbf{.811} \\ {\scriptsize [.656,.933]}} \\
+Bratwurst & 9 & 36 & \shortstack{\textbf{.694} \\ {\scriptsize [.403,.903]}} & \shortstack{.639$^\dag$ \\ {\scriptsize [.375,.875]}} & \shortstack{.667$^\dag$ \\ {\scriptsize [.375,.875]}} \\
+Breaded Chicken Filet & 5 & 10 & \shortstack{.300$^\dag$ \\ {\scriptsize [.100,.700]}} & \shortstack{\textbf{.800} \\ {\scriptsize [.300,.950]}} & \shortstack{.300$^\dag$ \\ {\scriptsize [.100,.700]}} \\
+Breakfast Sausages & 10 & 45 & \shortstack{.589$^\dag$ \\ {\scriptsize [.311,.844]}} & \shortstack{.578$^\dag$ \\ {\scriptsize [.378,.711]}} & \shortstack{\textbf{.644} \\ {\scriptsize [.333,.900]}} \\
+Burgers & 10 & 45 & \shortstack{.756$^\dag$ \\ {\scriptsize [.544,.911]}} & \shortstack{\textbf{.800} \\ {\scriptsize [.622,.922]}} & \shortstack{\textbf{.800} \\ {\scriptsize [.600,.933]}} \\
+Butter & 10 & 45 & \shortstack{.689$^\dag$ \\ {\scriptsize [.444,.833]}} & \shortstack{.689$^\dag$ \\ {\scriptsize [.456,.878]}} & \shortstack{\textbf{.711} \\ {\scriptsize [.478,.833]}} \\
+Cheddar Cheese & 8 & 28 & \shortstack{\textbf{.768} \\ {\scriptsize [.607,.929]}} & \shortstack{.661$^\dag$ \\ {\scriptsize [.304,.893]}} & \shortstack{.732$^\dag$ \\ {\scriptsize [.589,.911]}} \\
+Chicken Strips & 10 & 45 & \shortstack{.522$^\dag$ \\ {\scriptsize [.367,.744]}} & \shortstack{.533$^\dag$ \\ {\scriptsize [.244,.822]}} & \shortstack{\textbf{.578} \\ {\scriptsize [.389,.778]}} \\
+Cream Cheese & 10 & 45 & \shortstack{.667$^\dag$ \\ {\scriptsize [.378,.856]}} & \shortstack{.600$^\dag$ \\ {\scriptsize [.322,.811]}} & \shortstack{\textbf{.778} \\ {\scriptsize [.478,.922]}} \\
+Creamer & 9 & 36 & \shortstack{\textbf{.875} \\ {\scriptsize [.778,.958]}} & \shortstack{.722$^\dag$ \\ {\scriptsize [.361,.889]}} & \shortstack{.833$^\dag$ \\ {\scriptsize [.625,.944]}} \\
+Deli Ham & 9 & 36 & \shortstack{.458$^\dag$ \\ {\scriptsize [.181,.764]}} & \shortstack{\textbf{.708} \\ {\scriptsize [.458,.875]}} & \shortstack{.542$^\dag$ \\ {\scriptsize [.250,.819]}} \\
+Deli Turkey & 7 & 21 & \shortstack{.667$^\dag$ \\ {\scriptsize [.333,.857]}} & \shortstack{.714$^\dag$ \\ {\scriptsize [.381,.905]}} & \shortstack{\textbf{.810} \\ {\scriptsize [.571,.952]}} \\
+Hot Dogs & 10 & 45 & \shortstack{.667$^\dag$ \\ {\scriptsize [.356,.856]}} & \shortstack{\textbf{.756} \\ {\scriptsize [.589,.922]}} & \shortstack{.733$^\dag$ \\ {\scriptsize [.567,.889]}} \\
+Ice Cream Hard Serve & 10 & 45 & \shortstack{.467$^\dag$ \\ {\scriptsize [.256,.756]}} & \shortstack{\textbf{.711} \\ {\scriptsize [.478,.889]}} & \shortstack{.533$^\dag$ \\ {\scriptsize [.333,.789]}} \\
+Meatballs & 5 & 10 & \shortstack{\textbf{.600} \\ {\scriptsize [.100,.900]}} & \shortstack{.100$^\dag$ \\ {\scriptsize [.050,.250]}} & \shortstack{\textbf{.600} \\ {\scriptsize [.100,.900]}} \\
+Milk & 18 & 153 & \shortstack{.699$^\dag$ \\ {\scriptsize [.536,.833]}} & \shortstack{.693$^\dag$ \\ {\scriptsize [.595,.801]}} & \shortstack{\textbf{.830} \\ {\scriptsize [.716,.928]}} \\
+Mozzarella & 8 & 28 & \shortstack{\textbf{.589} \\ {\scriptsize [.268,.911]}} & \shortstack{.214$^\dag$ \\ {\scriptsize [.089,.429]}} & \shortstack{.464$^\dag$ \\ {\scriptsize [.161,.786]}} \\
+Nuggets & 10 & 45 & \shortstack{\textbf{.533} \\ {\scriptsize [.322,.756]}} & \shortstack{.356$^\dag$ \\ {\scriptsize [.156,.556]}} & \shortstack{.333$^\dag$ \\ {\scriptsize [.156,.611]}} \\
+Pulled Pork & 7 & 21 & \shortstack{\textbf{.667} \\ {\scriptsize [.357,.905]}} & \shortstack{.333$^\dag$ \\ {\scriptsize [.095,.619]}} & \shortstack{.571$^\dag$ \\ {\scriptsize [.333,.833]}} \\
+Sour Cream & 5 & 10 & \shortstack{\textbf{.600} \\ {\scriptsize [.250,.900]}} & \shortstack{.500$^\dag$ \\ {\scriptsize [.100,.900]}} & \shortstack{\textbf{.600} \\ {\scriptsize [.250,.900]}} \\
+Steak & 9 & 36 & \shortstack{\textbf{.833} \\ {\scriptsize [.722,.931]}} & \shortstack{.556$^\dag$ \\ {\scriptsize [.222,.806]}} & \shortstack{.778$^\dag$ \\ {\scriptsize [.542,.903]}} \\
+Unbreaded Chicken Breast & 10 & 45 & \shortstack{.756$^\dag$ \\ {\scriptsize [.522,.911]}} & \shortstack{.600$^\dag$ \\ {\scriptsize [.367,.800]}} & \shortstack{\textbf{.800} \\ {\scriptsize [.600,.911]}} \\
+Yogurt & 6 & 15 & \shortstack{\textbf{.467} \\ {\scriptsize [.133,.733]}} & \shortstack{.133$^\dag$ \\ {\scriptsize [.067,.300]}} & \shortstack{.400$^\dag$ \\ {\scriptsize [.133,.700]}} \\
+\bottomrule
+\end{tabular}
+\end{center}

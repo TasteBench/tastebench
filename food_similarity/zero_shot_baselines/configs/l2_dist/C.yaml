@@ -1,0 +1,30 @@
+# Ablation: compound
+# Distance: l2, Normalization: rank (percentile within category)
+# Features: Compound embeddings
+
+experiment_name: l2_dist/l2_C
+
+model:
+  type: distance_predictor
+  distance_metric: l2
+  normalization_method: rank
+
+features:
+  # Compound embeddings (FoodAtlas)
+  compound:
+    enabled: true
+    weight: 1.0
+    scaler_type: standard
+    pca_dim: null
+    food_atlas_dir: ../../data/food_atlas/v4.0
+    smiles_cache: ../../shared/data/caches/smiles_cache.csv
+    embeddings_cache: ../../shared/data/caches/fart_compound_embeddings.pkl
+    ingredient_agg_method: weighted_average
+    product_agg_method: weighted_average
+
+missing_feature_strategy: skip
+random_seed: 42
+
+data:
+  data_dir: data/competition
+  labels_path: data/product_labels_manually_cleaned.csv

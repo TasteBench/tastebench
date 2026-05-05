@@ -1,0 +1,37 @@
+\begin{center}
+\captionof{table}{Per-category metrics for the NNLS ensemble (BT $+$ Gemini), covering both the per-category evaluation metrics (Section~\ref{sec:Tasks}) and the inputs used in the worked example (Section~\ref{sec:theoretical}). $n$ = number of products in category; Pairs $= \binom{n}{2}$ within-category ranking pairs. $\sigma_S/\mu_S$ is the coefficient of variation of the panel-mean similarity within the category. $\rho_{\mathrm{S}}$ is Spearman rank correlation; $r$ is Pearson correlation between predicted and panel-mean scores. ``True-best rank'' is the position of the highest-rated product in the model's ranking (1 = top). Pairwise accuracy CIs are 95\% BCa (10{,}000 resamples). Aggregated across these 24 categories, NNLS achieves R@1 $=$ .292, R@2 $=$ .500, R@3 $=$ .542.}
+\label{tab:per-category-nnls}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}lrrccccc@{}}
+\toprule
+Category & $n$ & Pairs & $\sigma_S/\mu_S$ & Pw.\ Acc.\ & $\rho_{\mathrm{S}}$ & $r$ & True-best rank \\
+\midrule
+Bacon & 10 & 45 & .191 & \shortstack{.533 \\ {\scriptsize [.289,.778]}} & $+$.091 & $+$.235 & 5 \\
+Barista Milk & 10 & 45 & .155 & \shortstack{.811 \\ {\scriptsize [.656,.933]}} & $+$.821 & $+$.753 & 1 \\
+Bratwurst & 9 & 36 & .169 & \shortstack{.667 \\ {\scriptsize [.375,.875]}} & $+$.450 & $+$.433 & 1 \\
+Breaded Chicken Filet & 5 & 10 & .064 & \shortstack{.300 \\ {\scriptsize [.100,.700]}} & $-$.600 & $-$.674 & 4 \\
+Breakfast Sausages & 10 & 45 & .125 & \shortstack{.644 \\ {\scriptsize [.333,.900]}} & $+$.382 & $+$.124 & 1 \\
+Burgers & 10 & 45 & .190 & \shortstack{.800 \\ {\scriptsize [.600,.933]}} & $+$.758 & $+$.812 & 4 \\
+Butter & 10 & 45 & .135 & \shortstack{.711 \\ {\scriptsize [.478,.833]}} & $+$.636 & $+$.602 & 2 \\
+Cheddar Cheese & 8 & 28 & .104 & \shortstack{.732 \\ {\scriptsize [.589,.911]}} & $+$.695 & $+$.746 & 2 \\
+Chicken Strips & 10 & 45 & .113 & \shortstack{.578 \\ {\scriptsize [.389,.778]}} & $+$.164 & $+$.136 & 4 \\
+Cream Cheese & 10 & 45 & .231 & \shortstack{.778 \\ {\scriptsize [.478,.922]}} & $+$.685 & $+$.814 & 7 \\
+Creamer & 9 & 36 & .226 & \shortstack{.833 \\ {\scriptsize [.625,.944]}} & $+$.817 & $+$.921 & 4 \\
+Deli Ham & 9 & 36 & .160 & \shortstack{.542 \\ {\scriptsize [.250,.819]}} & $+$.117 & $-$.074 & 7 \\
+Deli Turkey & 7 & 21 & .183 & \shortstack{.810 \\ {\scriptsize [.571,.952]}} & $+$.750 & $+$.720 & 1 \\
+Hot Dogs & 10 & 45 & .191 & \shortstack{.733 \\ {\scriptsize [.567,.889]}} & $+$.697 & $+$.624 & 2 \\
+Ice Cream Hard Serve & 10 & 45 & .174 & \shortstack{.533 \\ {\scriptsize [.333,.789]}} & $+$.091 & $+$.432 & 6 \\
+Meatballs & 5 & 10 & .256 & \shortstack{.600 \\ {\scriptsize [.100,.900]}} & $+$.300 & $+$.271 & 1 \\
+Milk & 18 & 153 & .190 & \shortstack{.830 \\ {\scriptsize [.716,.928]}} & $+$.798 & $+$.794 & 9 \\
+Mozzarella & 8 & 28 & .137 & \shortstack{.464 \\ {\scriptsize [.161,.786]}} & $-$.119 & $-$.336 & 8 \\
+Nuggets & 10 & 45 & .155 & \shortstack{.333 \\ {\scriptsize [.156,.611]}} & $-$.455 & $-$.275 & 7 \\
+Pulled Pork & 7 & 21 & .164 & \shortstack{.571 \\ {\scriptsize [.333,.833]}} & $+$.214 & $+$.197 & 2 \\
+Sour Cream & 5 & 10 & .160 & \shortstack{.600 \\ {\scriptsize [.250,.900]}} & $+$.200 & $+$.405 & 2 \\
+Steak & 9 & 36 & .214 & \shortstack{.778 \\ {\scriptsize [.542,.903]}} & $+$.733 & $+$.696 & 1 \\
+Unbreaded Chicken Breast & 10 & 45 & .137 & \shortstack{.800 \\ {\scriptsize [.600,.911]}} & $+$.782 & $+$.812 & 1 \\
+Yogurt & 6 & 15 & .134 & \shortstack{.400 \\ {\scriptsize [.133,.700]}} & $-$.200 & $-$.386 & 3 \\
+\bottomrule
+\end{tabular}
+\end{center}

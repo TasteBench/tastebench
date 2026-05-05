@@ -1,0 +1,13 @@
+{
+  "median_pairwise_accuracy_ci": [
+    0.65,
+    0.65
+  ],
+  "k_star_ci": [
+    2.876225801338954,
+    2.996710725456563
+  ],
+  "model_vs_human_p_value": 0.0,
+  "model_all_pairs_accuracy": 0.6828877005347593,
+  "observed_diff": 0.03288770053475931
+}

@@ -1,0 +1,108 @@
+# Ablation: nutrition + compound
+# Distance: l2, Normalization: rank (percentile within category)
+# Features: Nutrition (category-specific), Compound embeddings
+
+experiment_name: l2_dist/l2_NC
+
+model:
+  type: distance_predictor
+  distance_metric: l2
+  normalization_method: rank
+
+features:
+  # Meat: Total Fat, Sodium, Protein, Dietary Fiber
+  nutrition_meat:
+    enabled: true
+    weight: 1.0
+    scaler_type: standard
+    pca_dim: null
+    normalize_per_100g: true
+    convert_to_grams: true
+    columns:
+      - Total Fat (g)
+      - Sodium (mg)
+      - Protein (g)
+      - Dietary Fiber (g)
+    categories:
+      - Bacon
+      - Bratwurst
+      - Breakfast_Sausages
+      - Burgers
+      - Chicken_Strips
+      - Breaded_Chicken_Filet
+      - Unbreaded_Chicken_Breast
+      - Deli_Ham
+      - Deli_Turkey
+      - Hot_Dogs
+      - Meatballs
+      - Nuggets
+      - Pulled_Pork
+      - Steak
+
+  # Non-Sweet Dairy: Total Fat, Sodium
+  nutrition_nonsweet_dairy:
+    enabled: true
+    weight: 1.0
+    scaler_type: standard
+    pca_dim: null
+    normalize_per_100g: true
+    convert_to_grams: true
+    columns:
+      - Total Fat (g)
+      - Sodium (mg)
+    categories:
+      - Butter
+      - Cream_Cheese
+      - Sour_Cream
+      - Creamer
+      - Milk
+      - Barista_Milk
+
+  # Cheese: Total Fat, Sodium, Total Carbohydrate
+  nutrition_cheese:
+    enabled: true
+    weight: 1.0
+    scaler_type: standard
+    pca_dim: null
+    normalize_per_100g: true
+    convert_to_grams: true
+    columns:
+      - Total Fat (g)
+      - Sodium (mg)
+      - Total Carbohydrate (g)
+    categories:
+      - Cheddar_Cheese
+      - Mozzarella
+
+  # Sweet Dairy: Total Fat, Total Sugars
+  nutrition_sweet_dairy:
+    enabled: true
+    weight: 1.0
+    scaler_type: standard
+    pca_dim: null
+    normalize_per_100g: true
+    convert_to_grams: true
+    columns:
+      - Total Fat (g)
+      - Total Sugars (g)
+    categories:
+      - Ice_Cream_Hard_Serve
+      - Yogurt
+  # Compound embeddings (FoodAtlas)
+  compound:
+    enabled: true
+    weight: 1.0
+    scaler_type: standard
+    pca_dim: null
+    food_atlas_dir: ../../data/food_atlas/v4.0
+    smiles_cache: ../../shared/data/caches/smiles_cache.csv
+    embeddings_cache: ../../shared/data/caches/fart_compound_embeddings.pkl
+    ingredient_agg_method: weighted_average
+    product_agg_method: weighted_average
+
+missing_feature_strategy: skip
+random_seed: 42
+
+data:
+  data_dir: data/competition
+  labels_path: data/product_labels_manually_cleaned.csv

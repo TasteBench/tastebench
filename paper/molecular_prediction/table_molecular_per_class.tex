@@ -1,0 +1,26 @@
+\begin{center}
+\captionof{table}{Per-class breakdown for Table~\ref{tab:molecular-prediction}: Precision, Recall, F1 and one-vs-rest AUROC of FART and GNN on each FART test class, with 95\% BCa CIs (10{,}000 resamples; point on top, CI in brackets below). Support row gives the number of test molecules per class. Umami CIs span much of $[0, 1]$ because $n=6$. \textbf{Bold} = winner of FART vs GNN per (class, metric); $^\dag$ = CI overlaps the leader (no significant difference at 95\%).}
+\label{tab:molecular-prediction-per-class}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+ & Sweet & Bitter & Sour & Umami & Undefined \\
+\midrule
+Support & 1473 & 233 & 238 & 6 & 304 \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{FART}} \\
+\quad Precision & \shortstack{.944$^\dag$ \\ {\scriptsize [.931,.955]}} & \shortstack{.856$^\dag$ \\ {\scriptsize [.801,.901]}} & \shortstack{.897$^\dag$ \\ {\scriptsize [.853,.931]}} & \shortstack{\textbf{1.000} \\ {\scriptsize [.000,1.000]}} & \shortstack{.698$^\dag$ \\ {\scriptsize [.648,.746]}} \\
+\quad Recall & \shortstack{.943$^\dag$ \\ {\scriptsize [.930,.954]}} & \shortstack{.712$^\dag$ \\ {\scriptsize [.651,.767]}} & \shortstack{.916$^\dag$ \\ {\scriptsize [.874,.947]}} & \shortstack{.333$^\dag$ \\ {\scriptsize [.000,.800]}} & \shortstack{\textbf{.789} \\ {\scriptsize [.742,.834]}} \\
+\quad F1 & \shortstack{.944$^\dag$ \\ {\scriptsize [.935,.952]}} & \shortstack{.778$^\dag$ \\ {\scriptsize [.731,.818]}} & \shortstack{.906$^\dag$ \\ {\scriptsize [.877,.931]}} & \shortstack{.500$^\dag$ \\ {\scriptsize [.000,.909]}} & \shortstack{.741$^\dag$ \\ {\scriptsize [.702,.778]}} \\
+\quad AUROC & \shortstack{.979$^\dag$ \\ {\scriptsize [.973,.983]}} & \shortstack{.951$^\dag$ \\ {\scriptsize [.932,.965]}} & \shortstack{.995$^\dag$ \\ {\scriptsize [.992,.997]}} & \shortstack{\textbf{.989} \\ {\scriptsize [.975,.999]}} & \shortstack{.958$^\dag$ \\ {\scriptsize [.946,.967]}} \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{GNN}} \\
+\quad Precision & \shortstack{\textbf{.945} \\ {\scriptsize [.932,.956]}} & \shortstack{\textbf{.869} \\ {\scriptsize [.817,.912]}} & \shortstack{\textbf{.906} \\ {\scriptsize [.864,.937]}} & \shortstack{.667$^\dag$ \\ {\scriptsize [.000,1.000]}} & \shortstack{\textbf{.736} \\ {\scriptsize [.686,.783]}} \\
+\quad Recall & \shortstack{\textbf{.953} \\ {\scriptsize [.941,.963]}} & \shortstack{\textbf{.742} \\ {\scriptsize [.683,.796]}} & \shortstack{\textbf{.933} \\ {\scriptsize [.894,.960]}} & \shortstack{\textbf{.667} \\ {\scriptsize [.000,1.000]}} & \shortstack{.770$^\dag$ \\ {\scriptsize [.720,.816]}} \\
+\quad F1 & \shortstack{\textbf{.949} \\ {\scriptsize [.940,.957]}} & \shortstack{\textbf{.801} \\ {\scriptsize [.757,.840]}} & \shortstack{\textbf{.919} \\ {\scriptsize [.891,.942]}} & \shortstack{\textbf{.667} \\ {\scriptsize [.000,.889]}} & \shortstack{\textbf{.752} \\ {\scriptsize [.713,.790]}} \\
+\quad AUROC & \shortstack{\textbf{.981} \\ {\scriptsize [.975,.985]}} & \shortstack{\textbf{.958} \\ {\scriptsize [.939,.970]}} & \shortstack{\textbf{.996} \\ {\scriptsize [.993,.997]}} & \shortstack{.988$^\dag$ \\ {\scriptsize [.927,1.000]}} & \shortstack{\textbf{.966} \\ {\scriptsize [.958,.973]}} \\
+\bottomrule
+\end{tabular}
+\end{center}

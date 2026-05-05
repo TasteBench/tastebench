@@ -1,0 +1,7 @@
+method,pairwise_accuracy,95% CI,IQR,eval_set
+Individual panelist (median),0.650,—,0.50–0.75,within-block
+Panel of 3,0.685,[0.640; 0.725],—,within-block
+Panel of 5,0.725,[0.686; 0.760],—,within-block
+Best model (within-block),0.661,[0.604; 0.716],—,within-block
+Best model (all pairs),0.683,[0.655; 0.740],—,all within-category
+Split-half ranking reliability,0.825,—,—,within-block

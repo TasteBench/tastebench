@@ -1,0 +1,6 @@
+model,source,accuracy,accuracy_ci_lo,accuracy_ci_hi,precision,precision_ci_lo,precision_ci_hi,recall,recall_ci_lo,recall_ci_hi,f1,f1_ci_lo,f1_ci_hi,auroc,auroc_ci_lo,auroc_ci_hi
+XGBoost (fp),Zimmermann et al. 2025,0.8988,,,0.8169,,,0.7400,,,0.7661,,,0.8520,,
+XGBoost (fp+desc),Zimmermann et al. 2025,0.8962,,,0.8842,,,0.7402,,,0.7779,,,0.8513,,
+Balanced RF (fp),Zimmermann et al. 2025,0.7972,,,0.5845,,,0.7322,,,0.6014,,,0.8391,,
+FART,this work,0.8940,0.8802,0.9059,0.8789,0.6751,0.8966,0.7388,0.6683,0.8691,0.7737,0.6710,0.8750,0.9744,0.9685,0.9793
+GNN,this work,0.9037,0.8904,0.9148,0.8246,0.6966,0.8948,0.8130,0.6830,0.8835,0.8176,0.7325,0.8760,0.9777,0.9683,0.9824

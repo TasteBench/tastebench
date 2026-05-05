@@ -1,0 +1,2642 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataBiases": "cr:dataBiases",
+    "dataCollection": "cr:dataCollection",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isEnumeration": "cr:isEnumeration",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "personalSensitiveInformation": "cr:personalSensitiveInformation",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "wd": "https://www.wikidata.org/wiki/",
+    "rai": "http://mlcommons.org/croissant/RAI/"
+  },
+  "alternateName": "NECTAR ratings and cropped product images for NeurIPS 2026",
+  "conformsTo": [
+    "http://mlcommons.org/croissant/1.0",
+    "http://mlcommons.org/croissant/RAI/1.0"
+  ],
+  "license": {
+    "@type": "sc:CreativeWork",
+    "name": "CC BY-NC 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/"
+  },
+  "distribution": [
+    {
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/tastepredchallenge/tastebench-nectar-dataset?datasetVersionNumber=2",
+      "contentSize": "175.44 MB",
+      "md5": "8+YGv+WmOBV5aLHQO7RAvA==",
+      "encodingFormat": "application/zip",
+      "@id": "archive.zip",
+      "@type": "cr:FileObject",
+      "name": "archive.zip",
+      "description": "Archive containing all the contents of the TasteBench NECTAR Dataset dataset"
+    },
+    {
+      "includes": "*.(jpg|jpeg)",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "image/jpeg",
+      "@id": "image-jpeg_fileset",
+      "@type": "cr:FileSet",
+      "name": "image/jpeg files",
+      "description": "image/jpeg files contained in archive.zip"
+    },
+    {
+      "includes": "*.png",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "image/png",
+      "@id": "image-png_fileset",
+      "@type": "cr:FileSet",
+      "name": "image/png files",
+      "description": "image/png files contained in archive.zip"
+    },
+    {
+      "contentUrl": "nectar_consolidated_ingredients_nutrition.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "nectar_consolidated_ingredients_nutrition.csv"
+    },
+    {
+      "contentUrl": "nectar_consolidated_sensory_rating.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "nectar_consolidated_sensory_rating.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "nectar_consolidated_sensory_rating.csv"
+    },
+    {
+      "contentUrl": "nectar_product_labels.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "nectar_product_labels.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "nectar_product_labels.csv"
+    },
+    {
+      "contentUrl": "product_labels_manually_cleaned.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "product_labels_manually_cleaned.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "product_labels_manually_cleaned.csv"
+    },
+    {
+      "contentUrl": "taste_like/Companies-Grid view.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "Companies-Grid+view.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "Companies-Grid view.csv"
+    },
+    {
+      "contentUrl": "taste_like/Ingredients-Grid view.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "Ingredients-Grid+view.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "Ingredients-Grid view.csv"
+    },
+    {
+      "contentUrl": "taste_like/Product Parent-Grid view.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "Product+Parent-Grid+view.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "Product Parent-Grid view.csv"
+    },
+    {
+      "contentUrl": "taste_like/Products-Grid view.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "Products-Grid+view.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "Products-Grid view.csv"
+    },
+    {
+      "contentUrl": "taste_like/processed_taste_like_ingredients_nutrition.csv",
+      "containedIn": {
+        "@id": "archive.zip"
+      },
+      "encodingFormat": "text/csv",
+      "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "processed_taste_like_ingredients_nutrition.csv"
+    }
+  ],
+  "recordSet": [
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "join_key"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/join_key",
+          "@type": "cr:Field",
+          "name": "join_key"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Year"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Year",
+          "@type": "cr:Field",
+          "name": "Year"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Category"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Category",
+          "@type": "cr:Field",
+          "name": "Category"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Product_Code"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Product_Code",
+          "@type": "cr:Field",
+          "name": "Product_Code"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Brand"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Brand",
+          "@type": "cr:Field",
+          "name": "Brand"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "UPC"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/UPC",
+          "@type": "cr:Field",
+          "name": "UPC"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Ingredient List"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Ingredient+List",
+          "@type": "cr:Field",
+          "name": "Ingredient List"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Manually Cleaned Ingredients"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Manually+Cleaned+Ingredients",
+          "@type": "cr:Field",
+          "name": "Manually Cleaned Ingredients"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Serving Size (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Serving+Size+(g)",
+          "@type": "cr:Field",
+          "name": "Serving Size (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Servings Per Container (#)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Servings+Per+Container+(%23)",
+          "@type": "cr:Field",
+          "name": "Servings Per Container (#)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Calories"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Calories",
+          "@type": "cr:Field",
+          "name": "Calories"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Total Fat (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Total+Fat+(g)",
+          "@type": "cr:Field",
+          "name": "Total Fat (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Saturated Fat (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Saturated+Fat+(g)",
+          "@type": "cr:Field",
+          "name": "Saturated Fat (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Trans Fat (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Trans+Fat+(g)",
+          "@type": "cr:Field",
+          "name": "Trans Fat (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Polyunsaturated Fat (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Polyunsaturated+Fat+(g)",
+          "@type": "cr:Field",
+          "name": "Polyunsaturated Fat (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Monounsaturated Fat (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Monounsaturated+Fat+(g)",
+          "@type": "cr:Field",
+          "name": "Monounsaturated Fat (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Cholesterol (mg)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Cholesterol+(mg)",
+          "@type": "cr:Field",
+          "name": "Cholesterol (mg)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Sodium (mg)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Sodium+(mg)",
+          "@type": "cr:Field",
+          "name": "Sodium (mg)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Total Carbohydrate (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Total+Carbohydrate+(g)",
+          "@type": "cr:Field",
+          "name": "Total Carbohydrate (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Dietary Fiber (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Dietary+Fiber+(g)",
+          "@type": "cr:Field",
+          "name": "Dietary Fiber (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Total Sugars (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Total+Sugars+(g)",
+          "@type": "cr:Field",
+          "name": "Total Sugars (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Added Sugars (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Added+Sugars+(g)",
+          "@type": "cr:Field",
+          "name": "Added Sugars (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Protein (g)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Protein+(g)",
+          "@type": "cr:Field",
+          "name": "Protein (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Vitamin D (mcg)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Vitamin+D+(mcg)",
+          "@type": "cr:Field",
+          "name": "Vitamin D (mcg)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Calcium (mg)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Calcium+(mg)",
+          "@type": "cr:Field",
+          "name": "Calcium (mg)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Iron (mg)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Iron+(mg)",
+          "@type": "cr:Field",
+          "name": "Iron (mg)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Potassium (mg)"
+            }
+          },
+          "@id": "nectar_consolidated_ingredients_nutrition.csv/Potassium+(mg)",
+          "@type": "cr:Field",
+          "name": "Potassium (mg)"
+        }
+      ],
+      "@id": "nectar_consolidated_ingredients_nutrition.csv",
+      "@type": "cr:RecordSet",
+      "name": "nectar_consolidated_ingredients_nutrition.csv"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "join_key"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/join_key",
+          "@type": "cr:Field",
+          "name": "join_key"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "product_category"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/product_category",
+          "@type": "cr:Field",
+          "name": "product_category"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "year"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/year",
+          "@type": "cr:Field",
+          "name": "year"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "respondent"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/respondent",
+          "@type": "cr:Field",
+          "name": "respondent"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "product_code"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/product_code",
+          "@type": "cr:Field",
+          "name": "product_code"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "appearance"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/appearance",
+          "@type": "cr:Field",
+          "name": "appearance"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "flavor"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/flavor",
+          "@type": "cr:Field",
+          "name": "flavor"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "liking"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/liking",
+          "@type": "cr:Field",
+          "name": "liking"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "nutrition_purchase_intent"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/nutrition_purchase_intent",
+          "@type": "cr:Field",
+          "name": "nutrition_purchase_intent"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "similarity"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/similarity",
+          "@type": "cr:Field",
+          "name": "similarity"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "texture"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/texture",
+          "@type": "cr:Field",
+          "name": "texture"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "purchase_intent"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/purchase_intent",
+          "@type": "cr:Field",
+          "name": "purchase_intent"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "brand"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/brand",
+          "@type": "cr:Field",
+          "name": "brand"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "meatiness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/meatiness",
+          "@type": "cr:Field",
+          "name": "meatiness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "greasiness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/greasiness",
+          "@type": "cr:Field",
+          "name": "greasiness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "color"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/color",
+          "@type": "cr:Field",
+          "name": "color"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "smokiness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/smokiness",
+          "@type": "cr:Field",
+          "name": "smokiness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "sweetness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/sweetness",
+          "@type": "cr:Field",
+          "name": "sweetness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "saltiness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/saltiness",
+          "@type": "cr:Field",
+          "name": "saltiness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "juiciness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/juiciness",
+          "@type": "cr:Field",
+          "name": "juiciness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "firmness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/firmness",
+          "@type": "cr:Field",
+          "name": "firmness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "aftertaste_strength"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/aftertaste_strength",
+          "@type": "cr:Field",
+          "name": "aftertaste_strength"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "aftertaste_pleasantness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/aftertaste_pleasantness",
+          "@type": "cr:Field",
+          "name": "aftertaste_pleasantness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "crispiness"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/crispiness",
+          "@type": "cr:Field",
+          "name": "crispiness"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_consolidated_sensory_rating.csv_fileobject"
+            },
+            "extract": {
+              "column": "breading_flavor"
+            }
+          },
+          "@id": "nectar_consolidated_sensory_rating.csv/breading_flavor",
+          "@type": "cr:Field",
+          "name": "breading_flavor"
+        }
+      ],
+      "@id": "nectar_consolidated_sensory_rating.csv",
+      "@type": "cr:RecordSet",
+      "name": "nectar_consolidated_sensory_rating.csv"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_product_labels.csv_fileobject"
+            },
+            "extract": {
+              "column": "category"
+            }
+          },
+          "@id": "nectar_product_labels.csv/category",
+          "@type": "cr:Field",
+          "name": "category"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_product_labels.csv_fileobject"
+            },
+            "extract": {
+              "column": "product_code"
+            }
+          },
+          "@id": "nectar_product_labels.csv/product_code",
+          "@type": "cr:Field",
+          "name": "product_code"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_product_labels.csv_fileobject"
+            },
+            "extract": {
+              "column": "product_type"
+            }
+          },
+          "@id": "nectar_product_labels.csv/product_type",
+          "@type": "cr:Field",
+          "name": "product_type"
+        },
+        {
+          "dataType": [
+            "sc:Boolean"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_product_labels.csv_fileobject"
+            },
+            "extract": {
+              "column": "has_meat"
+            }
+          },
+          "@id": "nectar_product_labels.csv/has_meat",
+          "@type": "cr:Field",
+          "name": "has_meat"
+        },
+        {
+          "dataType": [
+            "sc:Boolean"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_product_labels.csv_fileobject"
+            },
+            "extract": {
+              "column": "has_dairy"
+            }
+          },
+          "@id": "nectar_product_labels.csv/has_dairy",
+          "@type": "cr:Field",
+          "name": "has_dairy"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_product_labels.csv_fileobject"
+            },
+            "extract": {
+              "column": "cleaned_ingredients"
+            }
+          },
+          "@id": "nectar_product_labels.csv/cleaned_ingredients",
+          "@type": "cr:Field",
+          "name": "cleaned_ingredients"
+        },
+        {
+          "dataType": [
+            "sc:Boolean"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "nectar_product_labels.csv_fileobject"
+            },
+            "extract": {
+              "column": "is_reference"
+            }
+          },
+          "@id": "nectar_product_labels.csv/is_reference",
+          "@type": "cr:Field",
+          "name": "is_reference"
+        }
+      ],
+      "@id": "nectar_product_labels.csv",
+      "@type": "cr:RecordSet",
+      "name": "nectar_product_labels.csv"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "product_labels_manually_cleaned.csv_fileobject"
+            },
+            "extract": {
+              "column": "product_code"
+            }
+          },
+          "@id": "product_labels_manually_cleaned.csv/product_code",
+          "@type": "cr:Field",
+          "name": "product_code"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "product_labels_manually_cleaned.csv_fileobject"
+            },
+            "extract": {
+              "column": "category"
+            }
+          },
+          "@id": "product_labels_manually_cleaned.csv/category",
+          "@type": "cr:Field",
+          "name": "category"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "product_labels_manually_cleaned.csv_fileobject"
+            },
+            "extract": {
+              "column": "product_type"
+            }
+          },
+          "@id": "product_labels_manually_cleaned.csv/product_type",
+          "@type": "cr:Field",
+          "name": "product_type"
+        },
+        {
+          "dataType": [
+            "sc:Boolean"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "product_labels_manually_cleaned.csv_fileobject"
+            },
+            "extract": {
+              "column": "has_meat"
+            }
+          },
+          "@id": "product_labels_manually_cleaned.csv/has_meat",
+          "@type": "cr:Field",
+          "name": "has_meat"
+        },
+        {
+          "dataType": [
+            "sc:Boolean"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "product_labels_manually_cleaned.csv_fileobject"
+            },
+            "extract": {
+              "column": "has_dairy"
+            }
+          },
+          "@id": "product_labels_manually_cleaned.csv/has_dairy",
+          "@type": "cr:Field",
+          "name": "has_dairy"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "product_labels_manually_cleaned.csv_fileobject"
+            },
+            "extract": {
+              "column": "cleaned_ingredients"
+            }
+          },
+          "@id": "product_labels_manually_cleaned.csv/cleaned_ingredients",
+          "@type": "cr:Field",
+          "name": "cleaned_ingredients"
+        },
+        {
+          "dataType": [
+            "sc:Boolean"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "product_labels_manually_cleaned.csv_fileobject"
+            },
+            "extract": {
+              "column": "is_reference"
+            }
+          },
+          "@id": "product_labels_manually_cleaned.csv/is_reference",
+          "@type": "cr:Field",
+          "name": "is_reference"
+        }
+      ],
+      "@id": "product_labels_manually_cleaned.csv",
+      "@type": "cr:RecordSet",
+      "name": "product_labels_manually_cleaned.csv"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Slug"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Slug",
+          "@type": "cr:Field",
+          "name": "Slug"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Name"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Name",
+          "@type": "cr:Field",
+          "name": "Name"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Status"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Status",
+          "@type": "cr:Field",
+          "name": "Status"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Headquarters"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Headquarters",
+          "@type": "cr:Field",
+          "name": "Headquarters"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Website"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Website",
+          "@type": "cr:Field",
+          "name": "Website"
+        },
+        {
+          "dataType": [
+            "sc:Text",
+            "sc:URL"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Locator"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Locator",
+          "@type": "cr:Field",
+          "name": "Locator"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Logo"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Logo",
+          "@type": "cr:Field",
+          "name": "Logo"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Logo file"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Logo+file",
+          "@type": "cr:Field",
+          "name": "Logo file"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Approved By"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Approved+By",
+          "@type": "cr:Field",
+          "name": "Approved By"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Creator"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Creator",
+          "@type": "cr:Field",
+          "name": "Creator"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Approved Date"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Approved+Date",
+          "@type": "cr:Field",
+          "name": "Approved Date"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Creation Date"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Creation+Date",
+          "@type": "cr:Field",
+          "name": "Creation Date"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Modified Date"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Modified+Date",
+          "@type": "cr:Field",
+          "name": "Modified Date"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "unique id"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/unique+id",
+          "@type": "cr:Field",
+          "name": "unique id"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Companies-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Products"
+            }
+          },
+          "@id": "Companies-Grid+view.csv/Products",
+          "@type": "cr:Field",
+          "name": "Products"
+        }
+      ],
+      "@id": "Companies-Grid+view.csv",
+      "@type": "cr:RecordSet",
+      "name": "Companies-Grid view.csv"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Ingredients-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Slug"
+            }
+          },
+          "@id": "Ingredients-Grid+view.csv/Slug",
+          "@type": "cr:Field",
+          "name": "Slug"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Ingredients-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Display"
+            }
+          },
+          "@id": "Ingredients-Grid+view.csv/Display",
+          "@type": "cr:Field",
+          "name": "Display"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Ingredients-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "INS"
+            }
+          },
+          "@id": "Ingredients-Grid+view.csv/INS",
+          "@type": "cr:Field",
+          "name": "INS"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Ingredients-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Creation Date"
+            }
+          },
+          "@id": "Ingredients-Grid+view.csv/Creation+Date",
+          "@type": "cr:Field",
+          "name": "Creation Date"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Ingredients-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Modified Date"
+            }
+          },
+          "@id": "Ingredients-Grid+view.csv/Modified+Date",
+          "@type": "cr:Field",
+          "name": "Modified Date"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Ingredients-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Creator"
+            }
+          },
+          "@id": "Ingredients-Grid+view.csv/Creator",
+          "@type": "cr:Field",
+          "name": "Creator"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Ingredients-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "unique id"
+            }
+          },
+          "@id": "Ingredients-Grid+view.csv/unique+id",
+          "@type": "cr:Field",
+          "name": "unique id"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Ingredients-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Products"
+            }
+          },
+          "@id": "Ingredients-Grid+view.csv/Products",
+          "@type": "cr:Field",
+          "name": "Products"
+        }
+      ],
+      "@id": "Ingredients-Grid+view.csv",
+      "@type": "cr:RecordSet",
+      "name": "Ingredients-Grid view.csv"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Product+Parent-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Slug"
+            }
+          },
+          "@id": "Product+Parent-Grid+view.csv/Slug",
+          "@type": "cr:Field",
+          "name": "Slug"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Product+Parent-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Name"
+            }
+          },
+          "@id": "Product+Parent-Grid+view.csv/Name",
+          "@type": "cr:Field",
+          "name": "Name"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Product+Parent-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Company"
+            }
+          },
+          "@id": "Product+Parent-Grid+view.csv/Company",
+          "@type": "cr:Field",
+          "name": "Company"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Product+Parent-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Category"
+            }
+          },
+          "@id": "Product+Parent-Grid+view.csv/Category",
+          "@type": "cr:Field",
+          "name": "Category"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Product+Parent-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Status"
+            }
+          },
+          "@id": "Product+Parent-Grid+view.csv/Status",
+          "@type": "cr:Field",
+          "name": "Status"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Product+Parent-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Technology"
+            }
+          },
+          "@id": "Product+Parent-Grid+view.csv/Technology",
+          "@type": "cr:Field",
+          "name": "Technology"
+        }
+      ],
+      "@id": "Product+Parent-Grid+view.csv",
+      "@type": "cr:RecordSet",
+      "name": "Product Parent-Grid view.csv"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Slug"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Slug",
+          "@type": "cr:Field",
+          "name": "Slug"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Flavor"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Flavor",
+          "@type": "cr:Field",
+          "name": "Flavor"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Product"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Product",
+          "@type": "cr:Field",
+          "name": "Product"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Allergen filter"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Allergen+filter",
+          "@type": "cr:Field",
+          "name": "Allergen filter"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Allergens"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Allergens",
+          "@type": "cr:Field",
+          "name": "Allergens"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Cross contamination"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Cross+contamination",
+          "@type": "cr:Field",
+          "name": "Cross contamination"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Ingredients"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Ingredients",
+          "@type": "cr:Field",
+          "name": "Ingredients"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Ingredients list"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Ingredients+list",
+          "@type": "cr:Field",
+          "name": "Ingredients list"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Calcium"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Calcium",
+          "@type": "cr:Field",
+          "name": "Calcium"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Calcium (Normalized)"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Calcium+(Normalized)",
+          "@type": "cr:Field",
+          "name": "Calcium (Normalized)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Calories"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Calories",
+          "@type": "cr:Field",
+          "name": "Calories"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Calories (Normalized)"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Calories+(Normalized)",
+          "@type": "cr:Field",
+          "name": "Calories (Normalized)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Carbs"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Carbs",
+          "@type": "cr:Field",
+          "name": "Carbs"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Carbs (Normalized)"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Carbs+(Normalized)",
+          "@type": "cr:Field",
+          "name": "Carbs (Normalized)"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Cholesterol"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Cholesterol",
+          "@type": "cr:Field",
+          "name": "Cholesterol"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Cholesterol (Normalized)"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Cholesterol+(Normalized)",
+          "@type": "cr:Field",
+          "name": "Cholesterol (Normalized)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Fat"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Fat",
+          "@type": "cr:Field",
+          "name": "Fat"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Fat (Normalized)"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Fat+(Normalized)",
+          "@type": "cr:Field",
+          "name": "Fat (Normalized)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Iron"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Iron",
+          "@type": "cr:Field",
+          "name": "Iron"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Iron (Normalized)"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Iron+(Normalized)",
+          "@type": "cr:Field",
+          "name": "Iron (Normalized)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Protein"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Protein",
+          "@type": "cr:Field",
+          "name": "Protein"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Protein (Normalized)"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Protein+(Normalized)",
+          "@type": "cr:Field",
+          "name": "Protein (Normalized)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Sodium"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Sodium",
+          "@type": "cr:Field",
+          "name": "Sodium"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Sodium (Normalized)"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Sodium+(Normalized)",
+          "@type": "cr:Field",
+          "name": "Sodium (Normalized)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Serving size"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Serving+size",
+          "@type": "cr:Field",
+          "name": "Serving size"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Serving size unit"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Serving+size+unit",
+          "@type": "cr:Field",
+          "name": "Serving size unit"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Photo"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Photo",
+          "@type": "cr:Field",
+          "name": "Photo"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Image file"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Image+file",
+          "@type": "cr:Field",
+          "name": "Image file"
+        },
+        {
+          "dataType": [
+            "sc:Text",
+            "sc:URL"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Company link"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Company+link",
+          "@type": "cr:Field",
+          "name": "Company link"
+        },
+        {
+          "dataType": [
+            "sc:Text",
+            "sc:URL"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "GTFO link"
+            }
+          },
+          "@id": "Products-Grid+view.csv/GTFO+link",
+          "@type": "cr:Field",
+          "name": "GTFO link"
+        },
+        {
+          "dataType": [
+            "sc:Text",
+            "sc:URL"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Fake Meats link"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Fake+Meats+link",
+          "@type": "cr:Field",
+          "name": "Fake Meats link"
+        },
+        {
+          "dataType": [
+            "sc:Text",
+            "sc:URL"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Vejii link"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Vejii+link",
+          "@type": "cr:Field",
+          "name": "Vejii link"
+        },
+        {
+          "dataType": [
+            "sc:Text",
+            "sc:URL"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Amazon link"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Amazon+link",
+          "@type": "cr:Field",
+          "name": "Amazon link"
+        },
+        {
+          "dataType": [
+            "sc:Text",
+            "sc:URL"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Plantbelly link"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Plantbelly+link",
+          "@type": "cr:Field",
+          "name": "Plantbelly link"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Instacart link"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Instacart+link",
+          "@type": "cr:Field",
+          "name": "Instacart link"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "Products-Grid+view.csv_fileobject"
+            },
+            "extract": {
+              "column": "Status"
+            }
+          },
+          "@id": "Products-Grid+view.csv/Status",
+          "@type": "cr:Field",
+          "name": "Status"
+        }
+      ],
+      "@id": "Products-Grid+view.csv",
+      "@type": "cr:RecordSet",
+      "name": "Products-Grid view.csv"
+    },
+    {
+      "field": [
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Category"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Category",
+          "@type": "cr:Field",
+          "name": "Category"
+        },
+        {
+          "dataType": [
+            "sc:Integer"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Product code"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Product+code",
+          "@type": "cr:Field",
+          "name": "Product code"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Ingredient List"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Ingredient+List",
+          "@type": "cr:Field",
+          "name": "Ingredient List"
+        },
+        {
+          "dataType": [
+            "sc:Text"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Clean Ingredient List"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Clean+Ingredient+List",
+          "@type": "cr:Field",
+          "name": "Clean Ingredient List"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Serving Size (g)"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Serving+Size+(g)",
+          "@type": "cr:Field",
+          "name": "Serving Size (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Calories"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Calories",
+          "@type": "cr:Field",
+          "name": "Calories"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Total Fat (g)"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Total+Fat+(g)",
+          "@type": "cr:Field",
+          "name": "Total Fat (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Cholesterol (mg)"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Cholesterol+(mg)",
+          "@type": "cr:Field",
+          "name": "Cholesterol (mg)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Sodium (mg)"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Sodium+(mg)",
+          "@type": "cr:Field",
+          "name": "Sodium (mg)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Total Carbohydrates (g)"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Total+Carbohydrates+(g)",
+          "@type": "cr:Field",
+          "name": "Total Carbohydrates (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Protein (g)"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Protein+(g)",
+          "@type": "cr:Field",
+          "name": "Protein (g)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Calcium (mg)"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Calcium+(mg)",
+          "@type": "cr:Field",
+          "name": "Calcium (mg)"
+        },
+        {
+          "dataType": [
+            "sc:Float"
+          ],
+          "source": {
+            "fileObject": {
+              "@id": "processed_taste_like_ingredients_nutrition.csv_fileobject"
+            },
+            "extract": {
+              "column": "Iron (mg)"
+            }
+          },
+          "@id": "processed_taste_like_ingredients_nutrition.csv/Iron+(mg)",
+          "@type": "cr:Field",
+          "name": "Iron (mg)"
+        }
+      ],
+      "@id": "processed_taste_like_ingredients_nutrition.csv",
+      "@type": "cr:RecordSet",
+      "name": "processed_taste_like_ingredients_nutrition.csv"
+    }
+  ],
+  "version": 2,
+  "keywords": [],
+  "isAccessibleForFree": true,
+  "includedInDataCatalog": {
+    "@type": "sc:DataCatalog",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com"
+  },
+  "creator": {
+    "@type": "sc:Person",
+    "name": "TasteBench Organizers",
+    "url": "/tastepredchallenge",
+    "image": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png"
+  },
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com/organizations/kaggle",
+    "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+  },
+  "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-23.png-28618426/dataset-card.png",
+  "dateModified": "2026-05-05T18:51:00.9",
+  "@type": "sc:Dataset",
+  "name": "TasteBench NECTAR Dataset",
+  "url": "https://www.kaggle.com/datasets/tastepredchallenge/tastebench-nectar-dataset/versions/2",
+  "description": "This dataset is the gated raw-data for the TasteBench benchmark.\n\n## Data sources\n\nNECTAR (a third-party non-profit organization, not the benchmark authors) collected the sensory ratings, ingredient/nutrition data, and cropped product photos in this bundle via in-person consumer taste-test panels in the United States. The data is drawn from NECTAR's 2025 and 2026 *Taste of the Industry* reports (collected in 2024 and 2025 respectively).\n\nThis bundle also includes the **Taste Like** CPG product directory (acquired by NECTAR in November 2024). Taste Like was an industry-facing product directory aggregating ingredient lists, nutrition facts, and allergen metadata for 1{,}200+ plant-based and fermentation-based products from 147 companies. Taste Like products carry no sensory ratings; they appear in the public TasteBench Kaggle competition as obfuscation cover for NECTAR-evaluated products and are co-located in this bundle so reviewer reproduction does not require obtaining Taste Like data separately.\n\nThe benchmark authors are downstream consumers of both datasets, and did not collect any of these ratings, photos, or product listings.\n\n## Contents\n\n| File | Purpose |\n|---|---|\n| `nectar_consolidated_ingredients_nutrition.csv` | Per-product ingredient lists and 6-macronutrient panel |\n| `nectar_consolidated_sensory_rating.csv` | Per-panelist 1 to 7 Likert ratings (similarity, appearance, flavor, texture, liking, purchase intent) |\n| `nectar_product_labels.csv` | Category, has_meat, has_dairy, is_reference flags |\n| `product_labels_manually_cleaned.csv` | Hand-cleaned ingredient text used by the LLM zero-shot baselines |\n| `images.zip` | 501 cropped product photos (`cropped/<year>/<category>/<product_code>/<view>.[jpg|png]`) |\n| `taste_like.zip` | Taste Like CPG product directory (5 CSVs covering companies, products, ingredients, parents, and a processed nutrition view) |\n\n## Reviewer reproduction\n\nAfter downloading, place each artifact at the path the pipeline expects. The accompanying anonymous code repository ships a one-command helper. From the project root (`tastebench/` after unzipping the supplementary materials):\n\n```\nbash data/unpack_nectar_bundle.sh <path-to-downloaded-bundle>\n```\n\nThe script copies the four NECTAR CSVs to their target subdirectories, extracts `images.zip` and `taste_like.zip`, and verifies every expected file is present. Then run the Tier 1 retraining path documented in `README.md`. The supplementary repo also ships committed out-of-fold predictions, and the Tier 0 verification path (`bash verify_paper.sh`) re-renders all paper tables without this bundle.\n\n## License\n\nCC BY-NC 4.0, with access gated by NECTAR's NDA. Reviewer access for NeurIPS 2026 is granted via the private access link provided in the paper.",
+  "conditionsOfAccess": "Access requires an executed NDA with NECTAR. NeurIPS 2026 reviewers access the dataset via the private access link provided in the paper; other researchers request access via the Google Form linked in the paper's Datasets section. Once access is granted, use is governed by CC BY-NC 4.0.",
+  "rai:dataCollection": "This bundle combines two source datasets, neither of which was collected by the benchmark authors:\n(1) NECTAR — a third-party non-profit organization that runs annual industry-scale consumer taste-tests of plant-based proteins. NECTAR collected the sensory ratings via in-person taste-test panels at testing venues in the United States under a balanced incomplete block design (BIBD): each panelist evaluated multiple products per session across two sessions held on separate days, with different product subsets per session. Per-product per-panelist ratings cover similarity to a typical animal-based counterpart, appearance, flavor, texture, overall liking, and purchase intent on 1–7 Likert and ordinal categorical scales. NECTAR also contributed the per-product ingredient lists, nutrition facts, and cropped product photos.\n(2) Taste Like — an online directory of plant-based and fermentation-based CPG products founded in 2021 and acquired by NECTAR in November 2024. Taste Like aggregated ingredient lists, nutrition facts, and allergen metadata for 1{,}200+ products from 147 companies. Taste Like products carry no sensory ratings; in this bundle they are co-located alongside NECTAR's data so reviewer reproduction does not require obtaining Taste Like data separately.",
+  "rai:dataCollectionType": [
+    "physical collection",
+    "surveys",
+    "self-reporting",
+    "manual curation",
+    "web API"
+  ],
+  "rai:dataCollectionRawData": "Two source datasets:\n- NECTAR's 2025 and 2026 \"Taste of the Industry\" reports. The 2025 report (collected by NECTAR in 2024) covers 121 plant-based meats across 14 categories evaluated by 2{,}684 omnivore panelists; the 2026 report (collected by NECTAR in 2025) covers 94 dairy-free products across 10 categories evaluated by 2{,}183 omnivore panelists. NECTAR's underlying data is NDA-protected.\n- Taste Like CPG product directory (founded 2021, acquired by NECTAR in November 2024). Public-facing product features (ingredient lists, nutrition facts, allergen metadata) for 1{,}200+ plant-based and fermentation-based products from 147 companies.\nThe benchmark authors did not collect either dataset.",
+  "rai:dataCollectionTimeframe": [
+    "2021-01-01",
+    "2025-12-31"
+  ],
+  "rai:dataCollectionMissingData": "Approximately 7% of NECTAR-evaluated products lack source photographs and have no entry under data/product_images/cropped/<year>/<category>/<product_code>/. Some panelists did not respond to specific item-level questions; missing responses are encoded as nulls or \"No response\" literals in the consolidated ratings CSV. Some image files use the .jpeg extension instead of .jpg/.png; the pipeline globs only .jpg and .png and therefore skips three .jpeg-named views (Steak/923, Bacon/182, Creamer/859). Taste Like rows missing structured fields are encoded as nulls.",
+  "rai:dataPreprocessingProtocol": [
+    "All preprocessing in this bundle was performed upstream of the benchmark authors: NECTAR aggregated per-category panel responses into the consolidated ratings and ingredient/nutrition CSVs and cropped product photos to remove brand-revealing packaging; Taste Like maintained the CPG directory as an industry product database with curated company, product, and ingredient tables.",
+    "The benchmark authors additionally hand-cleaned ingredient text (product_labels_manually_cleaned.csv) for use in the LLM zero-shot baselines, normalizing punctuation and removing extraneous markup; this transformation is documented in food_similarity/zero_shot_baselines/.",
+    "No obfuscation, code renumbering, image augmentation, or synthetic data generation is applied to this bundle. Those transformations are applied separately to produce the public Kaggle TasteBench Challenge bundle, documented in its own Croissant."
+  ],
+  "rai:dataAnnotationProtocol": "Each panelist, recruited and instructed by NECTAR, provided ratings on per-item Likert scales (1–7 for similarity, appearance, flavor, texture, overall liking) and ordinal categorical scales (5–7 levels for purchase intent and frequency-of-consumption). Each NECTAR-evaluated product was rated by at least 100 unique panelists; aggregate scores are computed downstream as panelist-mean values. Taste Like products carry no sensory annotations. Panelist recruitment, informed consent, compensation, and data-collection ethics are NECTAR's protocols, not the benchmark authors'.",
+  "rai:dataAnnotationPlatform": [
+    "NECTAR's proprietary in-person panelist survey instrument, administered at NECTAR's testing venues during taste-test sessions. The benchmark authors did not modify NECTAR's data-collection instrument."
+  ],
+  "rai:dataAnnotationAnalysis": [
+    "Inter-rater agreement on the similarity scale is low (Krippendorff's $\\alpha = 0.077$), reflecting the inherent subjectivity of consumer sensory perception. Aggregating across panelists via the panel mean substantially improves reliability (split-half reliability $\\rho = 0.825$). Pairwise rankings between products in the same category are derived from panel-mean similarity scores; per-product ratings in this bundle are panelist-level and have not been aggregated."
+  ],
+  "rai:annotationsPerItem": "At least 100 panelist ratings per NECTAR-evaluated product. Taste Like products carry zero sensory annotations by design — they are directory listings, not panel-rated items.",
+  "rai:annotatorDemographics": [
+    "Demographic data was collected by NECTAR (not by the benchmark authors) and is not redistributed in this bundle. NECTAR's per-panelist intake form captures: self-identified diet (omnivore or flexitarian); self-identified gender (male, female, non-binary, prefer not to say); age in 5 categorical bins (18–25, 26–35, 36–45, 46–55, >55); education in 7 categorical levels (some high school through Ph.D.); presence/absence of children in household; and category-specific consumption frequency. Panel locations are NECTAR testing venues in the United States."
+  ],
+  "rai:personalSensitiveInformation": [
+    "This bundle contains no panelist demographic data — only product-level features (ingredient lists, nutrition facts, brand names, UPC codes, and cropped product photos), Taste Like CPG directory entries, and per-panelist rating values keyed by anonymized integer respondent IDs. Panelist demographic data collected by NECTAR is held by NECTAR and is not redistributed by the benchmark authors. Brand names and UPC codes in the ingredient/nutrition and ratings CSVs are NECTAR's competition-sensitive data and the reason this bundle is NDA-gated; redistribution outside the NDA-bound group of NECTAR + NeurIPS 2026 reviewers is prohibited."
+  ],
+  "rai:dataSocialImpact": "The benchmark this dataset backs is intended to accelerate sustainable-protein product development by enabling computational screening of formulations before expensive panel testing. Faster development cycles for plant-based and fermentation-based protein alternatives can contribute to reductions in greenhouse-gas emissions, land use, and animal welfare costs associated with conventional animal agriculture, per life-cycle assessments cited in the accompanying paper.",
+  "rai:dataBiases": [
+    "Panelist composition is biased toward US-based omnivore and flexitarian consumers who self-select into NECTAR's testing program; results may not generalize to international markets, vegan/vegetarian consumers, or trained sensory panels.",
+    "Panel locations concentrate in major US metropolitan areas; non-coastal or rural taste preferences may be underrepresented.",
+    "The Taste Like directory is curated and reflects the subset of plant-based / fermentation-based CPG products that opted into industry listing; it is not a uniform sample of the market.",
+    "Inter-rater agreement on similarity ratings is very low (Krippendorff's $\\alpha = 0.077$), reflecting subjective sensory perception. Aggregating to panel-mean targets is necessary for reliable signal.",
+    "Per-category sample sizes are small (5–18 NECTAR-evaluated products per category, median 9), producing wide confidence intervals on category-level metrics."
+  ],
+  "rai:dataLimitations": [
+    "Coverage limited to plant-based meats and non-sweet/sweet dairy and cheese analogs in the categories listed; eggs, seafood, and other plant-based protein categories are not yet included.",
+    "Sensory ratings reflect omnivore and flexitarian consumer perceptions; do not necessarily transfer to trained-panelist sensory descriptors or vegan-consumer preferences."
+  ],
+  "rai:dataUseCases": [
+    "Reviewer reproduction of the TasteBench food-similarity Tier 1 retraining pipeline from raw inputs.",
+    "Training and evaluation of food-similarity ranking models for plant-based product development by NDA-bound researchers.",
+    "Studying multimodal feature contribution (ingredient text, nutrition, molecular composition, visual appearance) for sensory prediction.",
+    "Not intended for: identifying which commercial brands underperformed in NECTAR sensory testing for any public-facing purpose; redistributing brand-identified ratings outside the NDA-bound group; transferring conclusions to non-omnivore consumer panels without revalidation."
+  ],
+  "rai:dataReleaseMaintenancePlan": [
+    "NECTAR-collected ratings, ingredients, nutrition, and cropped photos: maintained by NECTAR. NECTAR plans annual expansion to additional product categories (eggs, seafood) in subsequent \"Taste of the Industry\" reports.",
+    "Taste Like CPG product directory: maintained by NECTAR (acquired November 2024). Updates track NECTAR's product-database curation cycle.",
+    "This Kaggle Dataset bundle and the accompanying benchmark code: maintained by the benchmark authors. Versioning follows the Kaggle dataset version system; updates track NECTAR's annual report releases. The private access link is valid for the duration of the NeurIPS 2026 review process and may be revoked thereafter at NECTAR's discretion."
+  ],
+  "rai:hasSyntheticData": false
+}

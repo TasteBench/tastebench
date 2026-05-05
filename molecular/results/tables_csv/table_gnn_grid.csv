@@ -1,0 +1,13 @@
+depth,dropout,class_weighting,val_macro_f1,selected
+5,0.2,none,0.8254,yes
+5,0.0,none,0.8170,no
+5,0.2,sqrt_inverse_frequency,0.8042,no
+3,0.0,none,0.8003,no
+3,0.2,none,0.7893,no
+3,0.0,sqrt_inverse_frequency,0.7755,no
+5,0.0,sqrt_inverse_frequency,0.7707,no
+3,0.2,sqrt_inverse_frequency,0.7641,no
+3,0.0,inverse_frequency,0.7586,no
+5,0.2,inverse_frequency,0.7132,no
+5,0.0,inverse_frequency,0.7107,no
+3,0.2,inverse_frequency,0.6961,no

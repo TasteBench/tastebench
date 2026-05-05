@@ -1,0 +1,31 @@
+# Scaffold-split training config.
+# HP values: copy from dmpnn_base.yaml; update after random-split grid completes.
+run_name: dmpnn_scaffold
+seed: 42
+
+data:
+  train_csv: molecular/data/splits/scaffold/fart_train.csv
+  val_csv:   molecular/data/splits/scaffold/fart_val.csv
+  test_csv:  molecular/data/splits/scaffold/fart_test.csv
+  smiles_column: "Canonicalized SMILES"
+  label_column:  "Canonicalized Taste"
+  label_order:   ["sweet", "bitter", "sour", "umami", "undefined"]
+
+model:
+  type: dmpnn
+  hidden_dim: 300
+  depth: 5
+  dropout: 0.0
+  n_classes: 5
+
+training:
+  init_lr: 0.0001      # update from grid best
+  batch_size: 50
+  max_epochs: 50
+  patience: 10
+  device: auto
+  class_weighting: inverse_frequency
+
+wandb:
+  project: taste_gnn
+  mode: online

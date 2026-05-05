@@ -1,0 +1,33 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{Pairwise accuracy on 215 NECTAR products (935 within-category pairs; LOOCV) when the compound block is swapped from FART to GNN embeddings, for every non-LLM model in Table~\ref{tab:results} (otherwise identical setup). 95\% BCa CIs (10{,}000 resamples). $\Delta$ $=$ GNN $-$ FART. \textbf{Bold} = best in column; $^\dag$ = CI overlaps the leader (no significant difference at 95\%).}
+\label{tab:gnn-per-model}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & C $=$ FART & C $=$ GNN & $\Delta$ \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Unsupervised}} \\
+\quad MMRF (cosine) & .574 [.528,.635] & .545$^\dag$ [.494,.602] & $-$.029 \\
+\quad MMRF (L2) & .571 [.524,.632] & .556$^\dag$ [.509,.612] & $-$.014 \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Supervised -- linear}} \\
+\quad Ridge & .579 [.534,.632] & .586$^\dag$ [.539,.644] & $+$.006 \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Supervised -- pairwise}} \\
+\quad Bradley--Terry & .610$^\dag$ [.571,.661] & .616$^\dag$ [.580,.669] & $+$.005 \\
+\quad Hierarchical BT & .613$^\dag$ [.570,.670] & .624$^\dag$ [.581,.684] & $+$.011 \\
+\quad Kernel RankSVM & .618$^\dag$ [.579,.674] & .597$^\dag$ [.556,.654] & $-$.020 \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Supervised -- nonlinear}} \\
+\quad LightGBM & .558 [.509,.615] & .559$^\dag$ [.509,.617] & $+$.001 \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Ensemble (BT $+$ Gemini)}} \\
+\quad NNLS & \textbf{.683} [.654,.740] & \textbf{.635} [.594,.692] & $-$.048 \\
+\quad Rank average & .671$^\dag$ [.641,.725] & .626$^\dag$ [.584,.682] & $-$.044 \\
+\quad Mean & .623$^\dag$ [.587,.675] & .553$^\dag$ [.504,.609] & $-$.070 \\
+\bottomrule
+\end{tabular}
+\end{table}

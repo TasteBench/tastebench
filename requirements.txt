@@ -1,0 +1,42 @@
+# TasteBench unified pip requirements (mirror of environment.yml).
+# Tested with Python 3.13.12.
+#
+# Install via:    pip install -r requirements.txt
+# Or, conda:      conda env create -f environment.yml
+
+# Core scientific stack
+numpy==1.26.4
+pandas==2.3.1
+scipy==1.16.1
+scikit-learn==1.7.1
+matplotlib==3.10.3
+seaborn==0.13.2
+joblib==1.5.1
+tqdm==4.67.1
+PyYAML==6.0.2
+python-dotenv==1.2.1
+requests==2.32.5
+rapidfuzz==3.14.3
+pyarrow==23.0.1
+krippendorff==0.8.2
+
+# Supervised models
+lightgbm==4.6.0
+
+# Deep learning + image / text encoders
+torch==2.11.0
+torchvision==0.26.0
+lightning==2.6.1
+transformers==4.57.6
+sentence-transformers==5.1.2
+huggingface-hub==0.36.2
+timm==1.0.26
+Pillow==10.4.0
+
+# Cheminformatics
+rdkit==2025.9.1
+chemprop==2.2.3
+pyrfume==0.20
+
+# Test runner
+pytest==7.4.0

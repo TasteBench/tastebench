@@ -1,0 +1,26 @@
+\begin{center}
+\captionof{table}{Effect of swapping the supervised base in the
+BT+Gemini NNLS ensemble. Each row reports the pairwise accuracy of
+a supervised model alone (Standalone) and combined with
+Gemini~3.1~Pro via nested LOOCV NNLS (+~Gemini NNLS), on the SNCTI
+feature set ($n=215$ NECTAR plant-based products, 935 within-category
+pairs). Point estimate above, 95\% BCa CI ($10{,}000$ resamples) below.
+\textbf{Bold} = best in column; $^\dag$ = CI overlaps the leader
+(no significant difference at 95\%).}
+\label{tab:per-model-nnls}
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lcc}
+\toprule
+Supervised model & Standalone & + Gemini NNLS \\
+\midrule
+Gemini 3.1 Pro (alone) & \shortstack{\textbf{.654} \\ {\scriptsize [.619,.714]}} & — \\
+Bradley--Terry & \shortstack{.610$^\dag$ \\ {\scriptsize [.571,.662]}} & \shortstack{\textbf{.683} \\ {\scriptsize [.655,.740]}} \\
+Hierarchical BT & \shortstack{.613$^\dag$ \\ {\scriptsize [.571,.671]}} & \shortstack{.665$^\dag$ \\ {\scriptsize [.634,.720]}} \\
+Ridge & \shortstack{.579$^\dag$ \\ {\scriptsize [.535,.633]}} & \shortstack{.641$^\dag$ \\ {\scriptsize [.604,.699]}} \\
+Kernel RankSVM & \shortstack{.618$^\dag$ \\ {\scriptsize [.579,.674]}} & \shortstack{.659$^\dag$ \\ {\scriptsize [.628,.713]}} \\
+LightGBM & \shortstack{.558 \\ {\scriptsize [.509,.616]}} & \shortstack{.619$^\dag$ \\ {\scriptsize [.579,.679]}} \\
+\bottomrule
+\end{tabular}
+\end{center}

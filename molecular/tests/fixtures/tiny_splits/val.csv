@@ -1,0 +1,3 @@
+,Canonicalized SMILES,Standardized SMILES,Canonicalized Taste,Original Labels,Source,is_multiclass
+0,CCO,CCO,sour,sour,FlavorDB,False
+1,CC(=O)N,CC(=O)N,umami,umami,ChemTastesDB,False

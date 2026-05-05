@@ -1,0 +1,25 @@
+\begin{center}
+\captionof{table}{Validation macro-F1 for all 12 configurations in the GNN hyperparameter grid (depth $\times$ dropout $\times$ class weighting). The selected configuration (\textbf{bold}) is the highest val macro-F1; this checkpoint is used in Tables~\ref{tab:molecular-prediction} and \ref{tab:gnn-per-model}. Selection committed before evaluating on the FART test set or any NECTAR data.}
+\label{tab:gnn-grid}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.95}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+Depth & Dropout & Class weighting & Val macro-F1 \\
+\midrule
+\textbf{5} & \textbf{0.2} & \textbf{none} & \textbf{.825} \\
+5 & 0 & none & .817 \\
+5 & 0.2 & sqrt-inverse-frequency & .804 \\
+3 & 0 & none & .800 \\
+3 & 0.2 & none & .789 \\
+3 & 0 & sqrt-inverse-frequency & .776 \\
+5 & 0 & sqrt-inverse-frequency & .771 \\
+3 & 0.2 & sqrt-inverse-frequency & .764 \\
+3 & 0 & inverse-frequency & .759 \\
+5 & 0.2 & inverse-frequency & .713 \\
+5 & 0 & inverse-frequency & .711 \\
+3 & 0.2 & inverse-frequency & .696 \\
+\bottomrule
+\end{tabular}
+\end{center}

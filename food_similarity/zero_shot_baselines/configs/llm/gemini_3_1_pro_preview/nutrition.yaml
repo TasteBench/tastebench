@@ -1,0 +1,19 @@
+# LLM ablation: nutrition
+# Model: Gemini 3.1 Pro Preview (reasoning enabled)
+
+model:
+  type: llm_predictor
+  model_name: google/gemini-3.1-pro-preview
+  reasoning_enabled: true
+  temperature: 0.0
+  max_workers: 16
+  max_retries: 5
+  timeout_seconds: 30
+  timeout_reasoning_seconds: 120
+  prompt_features:
+  - nutrition
+random_seed: 42
+data:
+  data_dir: data/competition
+  labels_path: data/product_labels_manually_cleaned.csv
+experiment_name: llm/gemini_3_1_pro_preview/nutrition

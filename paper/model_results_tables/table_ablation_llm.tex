@@ -1,0 +1,20 @@
+\begin{center}
+\captionof{table}{Input ablation: pairwise accuracy with 95\% BCa CIs (10{,}000 resamples) for zero-shot LLMs across modality subsets. Ingr.\ = ingredient list text; Nutr.\ = nutrition facts; Img.\ = product image. \textbf{Bold} = best per model; $^\dag$ = CI overlaps the column leader (no significant difference at 95\%).}
+\label{tab:ablation-llm}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.95}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Input & Gemini & Qwen \\
+\midrule
+Ingr. & .607$^\dag$ [.566,.664] & .588$^\dag$ [.540,.648] \\
+Nutr. & .592$^\dag$ [.543,.655] & .587$^\dag$ [.537,.646] \\
+Img. & .589$^\dag$ [.544,.648] & .572$^\dag$ [.526,.627] \\
+Ingr.+Nutr. & .622$^\dag$ [.579,.682] & .604$^\dag$ [.558,.665] \\
+\textbf{Ingr.+Img.} & \textbf{.654} [.619,.713] & \textbf{.630} [.591,.688] \\
+Nutr.+Img. & .610$^\dag$ [.566,.671] & .573$^\dag$ [.526,.632] \\
+All & .625$^\dag$ [.582,.687] & .603$^\dag$ [.556,.664] \\
+\bottomrule
+\end{tabular}
+\end{center}

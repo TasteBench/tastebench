@@ -1,0 +1,6 @@
+{
+  "val_macro_f1": 0.7755429448736075,
+  "best_ckpt_path": "ckpt-epoch=23-val_loss=0.2829.ckpt",
+  "n_train": 10517,
+  "n_val": 2254
+}

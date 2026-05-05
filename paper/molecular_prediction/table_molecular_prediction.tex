@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{Taste classification on the FART test split (2{,}254 molecules). Macro-averaged Precision, Recall, F1; AUROC is macro one-vs-rest. The tree-based baselines and the FART checkpoint are from~\citet{zimmermann2025chemical}; we re-evaluate FART to add 95\% BCa CIs (10{,}000 resamples) and train the GNN on the same task. The ``FART augmented + confidence'' test-time augmentation variant is excluded for single-checkpoint comparability. fp $=$ Morgan fingerprints; desc $=$ molecular descriptors. McNemar's test on the FART vs GNN accuracy gap: $\chi^2$ $=$ 3.20, $p$ $=$ 0.07. \textbf{Bold} = best in column; $^\dag$ = CI overlaps the leader (no significant difference at 95\%). Per-class breakdown in Table~\ref{tab:molecular-prediction-per-class}.}
+\label{tab:molecular-prediction}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Model & Accuracy & Precision & Recall & F1 & AUROC \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Reported by~\citet{zimmermann2025chemical}}} \\
+\quad XGBoost (fp) & .899 & .817 & .740 & .766 & .852 \\
+\quad XGBoost (fp+desc) & .896 & \textbf{.884} & .740 & .778 & .851 \\
+\quad Balanced RF (fp) & .797 & .585 & .732 & .601 & .839 \\
+\quad FART & .894$^\dag$ [.880,.906] & .879 [.675,.897] & .739$^\dag$ [.668,.869] & .774$^\dag$ [.671,.875] & .974$^\dag$ [.968,.979] \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{This work}} \\
+\quad GNN & \textbf{.904} [.890,.915] & .825 [.697,.895] & \textbf{.813} [.683,.883] & \textbf{.818} [.732,.876] & \textbf{.978} [.968,.982] \\
+\bottomrule
+\end{tabular}
+\end{table}

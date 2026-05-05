@@ -1,0 +1,3 @@
+,Canonicalized SMILES,Standardized SMILES,Canonicalized Taste,Original Labels,Source,is_multiclass
+0,OC1=CC=CC=C1,OC1=CC=CC=C1,sweet,sweet,FlavorDB,False
+1,CC(C)CC(=O)O,CC(C)CC(=O)O,bitter,bitter,ChemTastesDB,False

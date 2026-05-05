@@ -1,0 +1,20 @@
+\begin{center}
+\captionof{table}{Compound-to-ingredient aggregation ablation on the food-similarity task (LOOCV, $n=215$ NECTAR products, 935 within-category pairs). For ingredient $I$ with compounds $i \in I$ at concentrations $c_i$ and compound embeddings $z_i$, the per-ingredient embedding $z_I$ follows one of the rules below. \emph{All-pairs} covers all within-category pairs; \emph{within-block} restricts to the BIBD blocks panelists saw (apples-to-apples with humans). 95\% BCa CIs in brackets (10{,}000 resamples; cluster bootstrap on blocks for within-block). \textbf{Bold} = best per (model, scope); $^\dag$ = CI overlaps the leader (no significant difference at 95\%).}
+\label{tab:ingredient-agg-ablation}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.95}
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{BT} & \multicolumn{2}{c}{BT $+$ Gemini NNLS} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Aggregation & Embedding $z_I$ & All-pairs & Within-block & All-pairs & Within-block \\
+\midrule
+Uniform mean & $\tfrac{1}{n}\sum_i z_i$ & .592$^\dag$ [.551,.645] & .555$^\dag$ [.487,.616] & .673$^\dag$ [.642,.730] & .656$^\dag$ [.595,.713] \\
+Element-wise max & $\max_i z_i$ (per coord.) & .605$^\dag$ [.566,.657] & .572$^\dag$ [.509,.631] & .679$^\dag$ [.649,.740] & \textbf{.661} [.600,.717] \\
+Top-3 by conc. & $\tfrac{1}{3}\sum_{i \in \mathrm{top}_3(c)} z_i$ & \textbf{.651} [.621,.702] & .608$^\dag$ [.534,.670] & \textbf{.685} [.657,.737] & .648$^\dag$ [.585,.705] \\
+Linear conc. & $\sum_i \tfrac{c_i}{\sum_j c_j}\, z_i$ & .622$^\dag$ [.586,.676] & \textbf{.613} [.554,.670] & .676$^\dag$ [.647,.730] & .651$^\dag$ [.588,.707] \\
+Log conc. & $\sum_i \tfrac{\log(1+c_i)}{\sum_j \log(1+c_j)}\, z_i$ & .610$^\dag$ [.571,.662] & .577$^\dag$ [.504,.640] & .683$^\dag$ [.655,.740] & \textbf{.661} [.599,.714] \\
+\bottomrule
+\end{tabular}
+\end{center}

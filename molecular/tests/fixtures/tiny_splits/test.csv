@@ -1,0 +1,3 @@
+,Canonicalized SMILES,Standardized SMILES,Canonicalized Taste,Original Labels,Source,is_multiclass
+0,CCN,CCN,undefined,undefined,FlavorDB,False
+1,CCCC,CCCC,sweet,sweet,Scifinder,False
